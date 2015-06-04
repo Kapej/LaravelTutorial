@@ -19,3 +19,7 @@ Route::get('/', function()
 Route::get('/',function(){
 	return "Wszystkie koty";
 });
+
+Route::get('cats/{id}',function($id){
+	return "Kot #$id";
+});
