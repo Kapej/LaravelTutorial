@@ -3,7 +3,7 @@
 @section('header')
   <a href="{{URL::to('/')}}">Powrót do podsumowania</a>
   <h2>
-    {{$cat->name}}
+    {{{$cat->name}}}
   </h2>
     <a href="{{URL::to('cats/'.$cat->id.'/edit')}}">
       <span class="glyphicon glyphicon-edit"></span> Edytuj
