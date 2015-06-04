@@ -11,12 +11,11 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+Route::get('/',function(){
+	return Redirect::to('cats');
 });
 
-Route::get('/',function(){
+Route::get('cats',function(){
 	return "Wszystkie koty";
 });
 
