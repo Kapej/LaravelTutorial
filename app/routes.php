@@ -16,13 +16,24 @@ Route::get('/',function(){
 });
 
 Route::get('cats',function(){
-	return "Wszystkie koty";
+	$cats = Cat::all();
+	return View::make('cats.index')
+			->with('cats',$cats);
 });
 
 Route::get('cats/{id}',function($id){
 	return "Kot #$id";
 });
 
+Route::get('cats/breeds/{name}',function($name){
+	$breed = Breed::whereName($name)->with('cats')->first();
+	return View::make('cats.index')
+			->with('breed',$breed)
+			->with('cats',$breed->cats);
+});
+
 Route::get('about',function(){
 	return View::make('about')->with('number_of_cats', 9000);
 });
+
+
